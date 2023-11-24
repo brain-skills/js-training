@@ -1,1 +1,1 @@
-# js-training
+# Тренажёр по JavaScript
