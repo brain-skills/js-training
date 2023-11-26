@@ -551,29 +551,16 @@
                         <legend>Ответ:</legend>
                         <textarea class="border-success">
                             const getInfo = persons => {
-                                const ages = persons.map(person => person.age);
-                              const averageAge = ages.reduce((a, b) => a + b, 0) / ages.length;
-                              const maxAge = Math.max(...ages);
-                              const oldestPerson = persons.find(person => person.age === maxAge);
-                              return {
-                                  averageAge,
-                                oldestPerson: oldestPerson.name,
-                              }
+                                const ages = persons.map(person => person.age); // формируем новый массив возрастов
+                                const averageAge = ages.reduce((a, b) => a + b, 0) / ages.length; // узнаём средний возраст
+                                const maxAge = Math.max(...ages); // узнаем максимальное число в массиве возрастов
+                                const oldestPerson = persons.find(person => person.age === maxAge);
+                                return {averageAge, oldestPerson: oldestPerson.name}
                             }
-                            console.log( getInfo([
-                              {
-                                  name: 'Kaya',
-                                age: 10,
-                              },
-                              {
-                                  name: 'Vitya',
-                                age: 20,
-                              },
-                              {
-                                  name: 'Kolya',
-                                age: 30,
-                              }
-                            ]))
+                            
+                            let mass = [{name: 'Kaya', age: 10,}, {name: 'Vitya', age: 20,},{name: 'Kolya', age: 30,}];
+                            
+                            console.log(getInfo(mass));
                         </textarea>
 						<br>
 						<h4>Задание 2</h4>
